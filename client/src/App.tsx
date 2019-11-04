@@ -9,11 +9,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InstrumentChart from './components/demo-chart';
 
-class App extends Component<{}, {title: string, security: DisplayEntry, data: any, midPrice: number}> {
+class App extends Component<{}, {title: string, security: string, data: any, midPrice: number}> {
 
   constructor(props: any) {
     super(props);
-    this.state = { title: this.getTitlePerRic(Config.SymbolsMap[Config.DefaultSymbol]), security: DefaultDisplayEntry, data: [], midPrice: 0};
+    this.state = { title: this.getTitlePerRic(Config.SymbolsMap[Config.DefaultSymbol]), security: Config.DefaultSymbol, data: [], midPrice: 0};
   }
 
   getTitlePerRic(ric:SymbolMap | null) {
