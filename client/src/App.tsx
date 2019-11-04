@@ -9,8 +9,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InstrumentChart from './components/demo-chart';
 
-type ExchangeSourceOption = { value: string, label: string };
-
 class App extends Component<{}, {title: string, security: DisplayEntry, data: any, midPrice: number}> {
 
   constructor(props: any) {
