@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import 'tick42-bootstrap/dist/t42bootstrap.bundle.css';
 import Config, { SymbolMap } from './config';
-import { DisplayEntry, DefaultDisplayEntry } from './lib/displayEntry';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
