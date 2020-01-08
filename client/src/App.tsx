@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InstrumentChart from './components/demo-chart';
+import Glue, {Glue42} from '@glue42/desktop';
 
 class App extends Component<{}, {title: string, security: string, data: any, midPrice: number}> {
 
@@ -20,6 +21,8 @@ class App extends Component<{}, {title: string, security: string, data: any, mid
   }
 
   componentDidMount() {
+    Glue().then(this.glue42Initialized);
+
     const historicDataUrl = `${Config.DataUrlBase}${Config.SymbolsMap[Config.DefaultSymbol].yf}`;
     fetch(historicDataUrl).then((result) => {
       return result.json();
@@ -46,7 +49,7 @@ class App extends Component<{}, {title: string, security: string, data: any, mid
           <Container className="instrument-chart-container">
             <Row>
               <Col>
-                { (this.state.data && this.state.data.length > 0) ? <InstrumentChart type="hybrid" data={this.state.data} midPrice={this.state.midPrice} symbol={this.state.security.ric} /> : "Loading..." }
+                { (this.state.data && this.state.data.length > 0) ? <InstrumentChart type="hybrid" data={this.state.data} midPrice={this.state.midPrice} symbol={this.state.security} /> : "Loading..." }
               </Col>
             </Row>
           </Container>
