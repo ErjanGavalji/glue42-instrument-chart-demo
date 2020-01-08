@@ -44,7 +44,6 @@ class App extends Component<{}, {title: string, security: DisplayEntry, data: an
   }
 
   async glue42ChannelUpdated(data: any, channelInfo: any) {
-    console.log('aaaaaa');
     let newRic: SymbolMap;
     let title = this.getTitlePerRic(null);
     
@@ -147,7 +146,7 @@ class App extends Component<{}, {title: string, security: DisplayEntry, data: an
                 { (this.state.data && this.state.data.length > 0) ? <InstrumentChart type="hybrid" data={this.state.data} midPrice={this.state.midPrice} symbol={this.state.security.ric} /> : "Loading..." }
               </Col>
               <Col>
-                <InstrumentChartKendo data={this.state.data} />
+                { (this.state.data && this.state.data.length > 0) ? <InstrumentChartKendo data={this.state.data} /> : "Loading..." }
               </Col>
             </Row>
           </Container>
