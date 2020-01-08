@@ -9,6 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Glue, {Glue42} from '@glue42/desktop';
 import InstrumentChart from './components/demo-chart';
+import InstrumentChartKendo from './components/kendo-chart';
 
 declare global {
   interface Window {
@@ -144,6 +145,9 @@ class App extends Component<{}, {title: string, security: DisplayEntry, data: an
             <Row>
               <Col>
                 { (this.state.data && this.state.data.length > 0) ? <InstrumentChart type="hybrid" data={this.state.data} midPrice={this.state.midPrice} symbol={this.state.security.ric} /> : "Loading..." }
+              </Col>
+              <Col>
+                <InstrumentChartKendo data={this.state.data} />
               </Col>
             </Row>
           </Container>
