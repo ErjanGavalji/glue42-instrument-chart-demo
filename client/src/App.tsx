@@ -142,9 +142,11 @@ class App extends Component<{}, {title: string, security: DisplayEntry, data: an
         </nav>
           <Container className="instrument-chart-container">
             <Row>
+              {false ?
               <Col>
                 { (this.state.data && this.state.data.length > 0) ? <InstrumentChart type="hybrid" data={this.state.data} midPrice={this.state.midPrice} symbol={this.state.security.ric} /> : "Loading..." }
               </Col>
+              : ""}
               <Col>
                 { (this.state.data && this.state.data.length > 0) ? <InstrumentChartKendo data={this.state.data} /> : "Loading..." }
               </Col>
